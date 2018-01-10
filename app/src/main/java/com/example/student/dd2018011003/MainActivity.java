@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     public void click1(View v)
     {
         Message msg = new Message();
-        handler.sendMessage(msg);
+        //handler.sendMessage(msg);
+        handler.sendMessageDelayed(msg, 1000);
     }
 }
