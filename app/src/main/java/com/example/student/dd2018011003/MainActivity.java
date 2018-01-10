@@ -20,13 +20,19 @@ public class MainActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             Log.d("MSG", "取得一個 Message");
+            Bundle b = msg.getData();
+            String str = b.getString("data");
+            Log.d("MSG", "DATA: " + str);
         }
     };
 
     public void click1(View v)
     {
         Message msg = new Message();
+        Bundle b = new Bundle();
+        b.putString("data", "MyData");
+        msg.setData(b);
         //handler.sendMessage(msg);
-        handler.sendMessageDelayed(msg, 1000);
+        handler.sendMessageDelayed(msg, 3000);
     }
 }
